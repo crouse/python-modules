@@ -175,11 +175,11 @@ class SimDb(object):
             self.conn.commit()
         except mdb.Error as e:
             return {'code': 1, 'errmsg': e, 'sql': sql}
-        return {'code': 0}
+        return {'code': 0, 'sql': sql}
 
     def close(self):
-        self.cur.close()
-        self.conn.close()
+		if self.cur: self.cur.close()
+        if self.conn: self.conn.close()
+		return {'code': 0}
         
 db = SimDb(host=host, user=user, passwd=password, db=database)
-

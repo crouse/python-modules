@@ -180,6 +180,6 @@ class SimDb(object):
     def close(self):
         if self.cur: self.cur.close()
         if self.conn: self.conn.close()
-		return {'code': 0}
+        return {'code': 0}
         
 db = SimDb(host=host, user=user, passwd=password, db=database)

@@ -178,7 +178,7 @@ class SimDb(object):
         return {'code': 0, 'sql': sql}
 
     def close(self):
-		if self.cur: self.cur.close()
+        if self.cur: self.cur.close()
         if self.conn: self.conn.close()
 		return {'code': 0}
         
